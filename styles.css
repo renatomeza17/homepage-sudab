@@ -1,0 +1,232 @@
+:root {
+    --primary-color: #003366; 
+    --secondary-color: #f4f7f6;
+    --accent-color: #c4a35a;   
+    --text-color: #333;
+    --blanco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*--------------- HEADER-------------- */
+.header-container {
+    background-color: var(--primary-color);
+    color: var(--blanco);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#header__logo {
+    width: 3.5rem;
+    filter: brightness(0) invert(1); 
+}
+
+.header__titulo {
+    font-size: 1rem;
+    text-align: center;
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.header__boton {
+    background-color: transparent;
+    border: none;
+    color: var(--blanco);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+
+
+
+
+/*--------- PORTADA------------- */
+.portada {
+    width: 100%;
+    height: 85vh;
+    position: relative;
+    background-image: url("facultad-unmsm.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    mask-image: linear-gradient(to bottom, #111 80%, transparent 100%);
+}
+
+.portada::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.portada__container {
+    position: relative;
+    z-index: 3;
+    width: 90%;
+    max-width: 800px;
+    color: var(--blanco);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.portada__titulo {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    line-height: 1.2;
+}
+
+.portada__descripcion {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.portada__boton-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.portada__boton {
+    text-decoration: none;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.portada__boton:hover {
+    background-color: #d4b36a;
+    transform: scale(1.05);
+}
+
+.boton-inventario {
+    background-color: transparent;
+    border: 2px solid var(--blanco);
+    color: var(--blanco);
+}
+
+
+
+/*------ MODULOS -------*/
+.modulos {
+    padding: 4rem 5%;
+    background-color: var(--blanco);
+    mask-image: linear-gradient(to top, #111 95%, transparent 100%);
+}
+
+.modulos__titulo {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.modulos__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.modulos__card {
+    background: var(--secondary-color);
+    padding: 2.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border-bottom: 4px solid transparent;
+}
+
+.modulos__card:hover {
+    transform: translateY(-10px);
+    border-bottom-color: var(--accent-color);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.modulos__card-icono {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.modulos__card-titulo {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.modulos__card-boton {
+    margin-top: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+
+/*----- FOOTER--------- */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3rem 5%;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer__container p {
+    margin-bottom: 0.5rem;
+}
+
+.footer__copyright {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 1rem;
+}
+
+
+
+
+/*----- Media queries --------------*/
+@media (max-width: 600px) {
+    .header__titulo {
+        display: none; 
+    }
+    
+    .portada__boton {
+        width: 100%;
+    }
+}
